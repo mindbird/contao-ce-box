@@ -11,8 +11,7 @@
     ],
     "require": {
         "php": "^7.0",
-        "contao/core-bundle": "^4.4",
-        "mindbird/ttn-php": "^1.0"
+        "contao/core-bundle": "^4.4"
     },
     "conflict": {
         "contao/core": "*",
