@@ -8,10 +8,10 @@
  * @license LGPL-3.0-or-later
  */
 
-namespace Mindbird\Contao\TheThingsNetwork;
+namespace Mindbird\Contao\CEBox;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ContaoCeBoxBundle extends Bundle
+class ContaoCEBoxBundle extends Bundle
 {
 }

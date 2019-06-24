@@ -1,5 +1,5 @@
 <div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
-    <?= $this->picture ?>
+    <?php $this->insert('picture_default', $this->picture); ?>
     <?php if ($this->headline): ?>
         <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
     <?php endif; ?>

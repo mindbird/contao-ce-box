@@ -8,14 +8,14 @@
  * @license LGPL-3.0-or-later
  */
 
-namespace  Mindbird\Contao\TheThingsNetwork\DependencyInjection;
+namespace  Mindbird\Contao\CEBox\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class ContaoCeBoxExtension extends Extension
+class ContaoCEBoxExtension extends Extension
 {
     /**
      * {@inheritdoc}
