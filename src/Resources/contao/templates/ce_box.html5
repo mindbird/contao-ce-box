@@ -1,10 +1,10 @@
 <div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
     <?php $this->insert('picture_default', $this->picture); ?>
     <?php if ($this->headline): ?>
-        <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+        <<?= $this->hl ?> class="headline"><?= $this->headline ?></<?= $this->hl ?>>
     <?php endif; ?>
     <div class="slogan"><?= $this->slogan ?></div>
-    <p><?= $this->text ?></p>
+    <div class="text"><?= $this->text ?></div>
     <?php if($this->link !== '') : ?>
         <div class="more"><a href="<?= $this->link ?>">Weiterlesen</a></div>
     <?php endif; ?>
