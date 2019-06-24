@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * This file is part of [mindbird/contao-ce-box].
+ *
+ * (c) mindbird
+ *
+ * @license LGPL-3.0-or-later
+ */
+
 namespace Mindbird\Contao\CEBox\Controller;
 
 use Contao\ContentModel;
@@ -19,12 +27,13 @@ class ContentElementBoxController extends AbstractContentElementController
         $template->slogan = $model->slogan;
 
         $file = FilesModel::findByPk($model->image);
-        if ($file !== null) {
+        if (null !== $file) {
             Template::addImageToTemplate($template, [
                 'singleSRC' => $file->path,
-                'size' => StringUtil::deserialize($model->imgSize)
+                'size' => StringUtil::deserialize($model->imgSize),
             ]);
         }
+
         return $template->getResponse();
     }
 }

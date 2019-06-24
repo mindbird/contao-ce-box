@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of [mindbird/contao-ttn].
+ * This file is part of [mindbird/contao-ce-box].
  *
  * (c) mindbird
  *
