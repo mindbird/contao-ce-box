@@ -1,0 +1,11 @@
+<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+    <?= $this->picture ?>
+    <?php if ($this->headline): ?>
+        <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+    <?php endif; ?>
+    <div class="slogan"><?= $this->slogan ?></div>
+    <p><?= $this->text ?></p>
+    <?php if($this->link !== '') : ?>
+        <div class="more"><a href="<?= $this->link ?>">Weiterlesen</a></div>
+    <?php endif; ?>
+</div>
