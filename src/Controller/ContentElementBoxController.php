@@ -17,13 +17,13 @@ class ContentElementBoxController extends AbstractContentElementController
     {
         $template->headline = $model->headline;
         $template->text = $model->text;
-        $template->picture = $model->picture;
+        $template->slogan = $model->slogan;
 
         $file = FilesModel::findByPk($model->image);
         if ($file !== null) {
             Template::addImageToTemplate($template, [
                 'singleSRC' => $file->path,
-                'size' => StringUtil::deserialize($this->imgSize)
+                'size' => StringUtil::deserialize($model->imgSize)
             ]);
         }
         return $template->getResponse();
