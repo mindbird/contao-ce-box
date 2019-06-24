@@ -8,7 +8,7 @@
  * @license LGPL-3.0-or-later
  */
 
-namespace Mindbird\Contao\CEBox\Controller;
+namespace Mindbird\Contao\CEBox\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
