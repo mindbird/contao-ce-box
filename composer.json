@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Mindbird\\Contao\\CeBox\\": "src/"
+            "Mindbird\\Contao\\CEBox\\": "src/"
         }
     },
     "support": {
