@@ -23,7 +23,7 @@
         "friendsofphp/php-cs-fixer": "^2.12"
     },
     "extra": {
-        "contao-manager-plugin": "Mindbird\\Contao\\CeBox\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "Mindbird\\Contao\\CEBox\\ContaoManager\\Plugin"
     },
     "autoload": {
         "psr-4": {
