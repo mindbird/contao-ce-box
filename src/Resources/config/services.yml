@@ -8,7 +8,9 @@ services:
             calls:
                 - ["setContainer", ["@service_container"]]
                 -
+
     # Content Elements
     Mindbird\Contao\CEBox\Controller\ContentElementBoxController:
+        arguments:
         tags:
             - { name: contao.content_element, category: texts }
