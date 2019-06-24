@@ -7,3 +7,8 @@ services:
         Symfony\Component\DependencyInjection\ContainerAwareInterface:
             calls:
                 - ["setContainer", ["@service_container"]]
+                -
+    # Content Elements
+    Mindbird\Contao\CEBox\Controller\ContentElementBoxController:
+        tags:
+            - { name: contao.content_element, category: texts }
