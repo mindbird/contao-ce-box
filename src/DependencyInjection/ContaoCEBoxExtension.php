@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of [mindbird/contao-ce-box].
+ * This file is part of [mindbird/contao-ttn].
  *
  * (c) mindbird
  *
@@ -22,7 +22,11 @@ class ContaoCEBoxExtension extends Extension
      */
     public function load(array $mergedConfig, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.yaml');
+        $loader = new YamlFileLoader(
+            $container,
+            new FileLocator(__DIR__.'/../Resources/config')
+        );
+
+        $loader->load('services.yml');
     }
 }

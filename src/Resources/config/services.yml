@@ -1,4 +1,15 @@
 services:
-    Mindbird\Contao\CEBox\Controller\ContentElementBoxController:
+    _instanceof:
+        Contao\CoreBundle\Framework\FrameworkAwareInterface:
+            calls:
+                - ["setFramework", ["@contao.framework"]]
+
+        Symfony\Component\DependencyInjection\ContainerAwareInterface:
+            calls:
+                - ["setContainer", ["@service_container"]]
+                -
+
+    mindbird.ce.box
+        class: Mindbird\Contao\CEBox\Controller\ContentElementBoxController
         tags:
             - { name: contao.content_element, category: texts }
