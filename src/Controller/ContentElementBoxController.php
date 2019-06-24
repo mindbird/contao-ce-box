@@ -12,7 +12,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ContentElementBoxController extends AbstractContentElementController
 {
-
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         $template->headline = $model->headline;

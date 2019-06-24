@@ -1,13 +1,5 @@
 <?php
 
-/*
- * This file is part of [mindbird/contao-ttn].
- *
- * (c) mindbird
- *
- * @license LGPL-3.0-or-later
- */
-
 namespace  Mindbird\Contao\CEBox\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
@@ -22,11 +14,7 @@ class ContaoCEBoxExtension extends Extension
      */
     public function load(array $mergedConfig, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader(
-            $container,
-            new FileLocator(__DIR__.'/../Resources/config')
-        );
-
-        $loader->load('services.yml');
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader->load('services.yaml');
     }
 }
