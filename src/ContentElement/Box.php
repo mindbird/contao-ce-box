@@ -22,7 +22,9 @@ class Box extends AbstractContentElementController
 {
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
-        $template->headline = $model->headline;
+        $arrHeadline = StringUtil::deserialize($model->headline);
+        $template->headline = \is_array($arrHeadline) ? $arrHeadline['value'] : $arrHeadline;
+        $template->hl = \is_array($arrHeadline) ? $arrHeadline['unit'] : 'h1';
         $template->text = $model->text;
         $template->slogan = $model->slogan;
 
