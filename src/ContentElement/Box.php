@@ -13,6 +13,7 @@ namespace Mindbird\Contao\CEBox\ContentElement;
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
 use Contao\FilesModel;
+use Contao\PageModel;
 use Contao\StringUtil;
 use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,12 +29,17 @@ class Box extends AbstractContentElementController
         $template->text = $model->text;
         $template->slogan = $model->slogan;
 
-        $file = FilesModel::findByPk($model->image);
-        if (null !== $file) {
-            Template::addImageToTemplate($template, [
-                'singleSRC' => $file->path,
-                'size' => StringUtil::deserialize($model->imgSize),
-            ]);
+        $file = FilesModel::findByPk($model->singleSRC);
+        Template::addImageToTemplate($template, [
+            'singleSRC' => $file->path,
+            'size' => StringUtil::deserialize($model->imgSize),
+        ]);
+
+        $page = PageModel::findByPk($model->jumpTo);
+        if ($page !== null) {
+            $template->link = $page->getFrontendUrl();
+        } else {
+            $template->link = '';
         }
 
         return $template->getResponse();
