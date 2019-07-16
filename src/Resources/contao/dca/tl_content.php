@@ -19,4 +19,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['jumpTo'] = [
         'relation' => ['type' => 'hasOne', 'load' => 'lazy']
     ];
 
+$GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['mandatory'] = false;
+
 $GLOBALS['TL_DCA']['tl_content']['palettes']['box'] = '{type_legend},type,headline;{text_legend},text,slogan,jumpTo;{image_legend},addImage;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
