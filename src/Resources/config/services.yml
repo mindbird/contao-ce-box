@@ -14,11 +14,11 @@ services:
             - { name: contao.content_element, category: box }
 
     mindbird.contao.ce.boxHeadlineText:
-        class: Mindbird\Contao\CEBox\ContentElement\Box
+        class: Mindbird\Contao\CEBox\ContentElement\BoxHeadlineText
         tags:
             - { name: contao.content_element, category: box }
 
     mindbird.contao.ce.boxHeadlineImage:
-        class: Mindbird\Contao\CEBox\ContentElement\Box
+        class: Mindbird\Contao\CEBox\ContentElement\BoxHeadlineImage
         tags:
             - { name: contao.content_element, category: box }
