@@ -12,3 +12,13 @@ services:
         class: Mindbird\Contao\CEBox\ContentElement\Box
         tags:
             - { name: contao.content_element, category: texts }
+
+    mindbird.contao.ce.boxHeadlineText:
+        class: Mindbird\Contao\CEBox\ContentElement\Box
+        tags:
+            - { name: contao.content_element, category: texts }
+
+    mindbird.contao.ce.boxHeadlineImage:
+        class: Mindbird\Contao\CEBox\ContentElement\Box
+        tags:
+            - { name: contao.content_element, category: texts }

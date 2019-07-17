@@ -10,15 +10,24 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['slogan'] = [
 ];
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['jumpTo'] = [
-        'label' => &$GLOBALS['TL_LANG']['tl_content']['jumpTo'],
-        'exclude' => true,
-        'inputType' => 'pageTree',
-        'foreignKey' => 'tl_page.title',
-        'eval' => ['fieldType' => 'radio', 'tl_class' => 'clr'],
-        'sql' => "int(10) unsigned NOT NULL default 0",
-        'relation' => ['type' => 'hasOne', 'load' => 'lazy']
-    ];
+    'label' => &$GLOBALS['TL_LANG']['tl_content']['jumpTo'],
+    'exclude' => true,
+    'inputType' => 'pageTree',
+    'foreignKey' => 'tl_page.title',
+    'eval' => ['fieldType' => 'radio', 'tl_class' => 'clr'],
+    'sql' => "int(10) unsigned NOT NULL default 0",
+    'relation' => ['type' => 'hasOne', 'load' => 'lazy']
+];
 
-$GLOBALS['TL_DCA']['tl_content']['fields']['text']['eval']['mandatory'] = false;
+$GLOBALS['TL_DCA']['tl_content']['fields']['box_text'] = [
+    'label' => &$GLOBALS['TL_LANG']['tl_content']['box_text'],
+    'exclude' => true,
+    'search' => true,
+    'inputType' => 'text',
+    'eval' => array('maxlength' => 512, 'tl_class' => 'clr'),
+    'sql' => "varchar(512) NOT NULL default ''"
+];
 
-$GLOBALS['TL_DCA']['tl_content']['palettes']['box'] = '{type_legend},type,headline;{text_legend},text,slogan,jumpTo;{image_legend},addImage;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['box'] = '{type_legend},type;{text_legend},headline,box_text,slogan,jumpTo,addImage;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['box_headline_image'] = '{type_legend},type;{text_legend},headline,jumpTo,addImage;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['box_headline_text'] = '{type_legend},type;{text_legend},headline,box_text,jumpTo;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
