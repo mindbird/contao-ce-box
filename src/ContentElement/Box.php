@@ -26,7 +26,7 @@ class Box extends AbstractContentElementController
         $arrHeadline = StringUtil::deserialize($model->headline);
         $template->headline = \is_array($arrHeadline) ? $arrHeadline['value'] : $arrHeadline;
         $template->hl = \is_array($arrHeadline) ? $arrHeadline['unit'] : 'h1';
-        $template->text = $model->text;
+        $template->text = $model->box_text;
         $template->slogan = $model->slogan;
 
         $file = FilesModel::findByPk($model->singleSRC);
