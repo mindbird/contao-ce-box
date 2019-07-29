@@ -32,7 +32,7 @@ class Box extends AbstractContentElementController
         $file = FilesModel::findByPk($model->singleSRC);
         Template::addImageToTemplate($template, [
             'singleSRC' => $file->path,
-            'size' => StringUtil::deserialize($model->imgSize),
+            'size' => $model->size,
         ]);
 
         $page = PageModel::findByPk($model->jumpTo);
