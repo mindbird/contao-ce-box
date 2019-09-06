@@ -24,7 +24,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['box_text'] = [
     'exclude' => true,
     'search' => true,
     'inputType' => 'textarea',
-    'eval' => array('mandatory' => true, 'rte' => 'tinyMCE', 'helpwizard' => true),
+    'eval' => array('mandatory' => true, 'rte' => 'tinyMCE', 'helpwizard' => true, 'tl_class' => 'clr'),
     'explanation' => 'insertTags',
     'sql' => "mediumtext NULL"
 ];
