@@ -23,9 +23,10 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['box_text'] = [
     'label' => &$GLOBALS['TL_LANG']['tl_content']['box_text'],
     'exclude' => true,
     'search' => true,
-    'inputType' => 'text',
-    'eval' => array('maxlength' => 512, 'tl_class' => 'clr'),
-    'sql' => "varchar(512) NOT NULL default ''"
+    'inputType' => 'textarea',
+    'eval' => array('mandatory' => true, 'rte' => 'tinyMCE', 'helpwizard' => true),
+    'explanation' => 'insertTags',
+    'sql' => "mediumtext NULL"
 ];
 
 $GLOBALS['TL_DCA']['tl_content']['palettes']['box'] = '{type_legend},type;{text_legend},headline,box_text,slogan,jumpTo,addImage;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
