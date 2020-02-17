@@ -29,6 +29,9 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['box_text'] = [
     'sql' => "mediumtext NULL"
 ];
 
+$GLOBALS['TL_DCA']['tl_content']['fields']['url']['eval']['tl_class'] = 'clr';
+$GLOBALS['TL_DCA']['tl_content']['fields']['addImage']['eval']['tl_class'] = 'clr';
+
 $GLOBALS['TL_DCA']['tl_content']['palettes']['box'] = '{type_legend},type;{text_legend},headline,box_text,slogan,jumpTo,url,addImage;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['box_headline_image'] = '{type_legend},type;{text_legend},headline,jumpTo,url,addImage;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 $GLOBALS['TL_DCA']['tl_content']['palettes']['box_headline_text'] = '{type_legend},type;{text_legend},headline,box_text,jumpTo,url;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
