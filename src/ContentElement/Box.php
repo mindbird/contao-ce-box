@@ -53,6 +53,8 @@ class Box extends AbstractContentElementController
             $template->link = '';
         }
 
+        $template->linkText = $model->link_text;
+
         return $template->getResponse();
     }
 }
