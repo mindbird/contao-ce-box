@@ -6,6 +6,6 @@
         <div class="text"><?= $this->text ?></div>
     <?php endif; ?>
     <?php if($this->link !== '') : ?>
-        <div class="more"><a href="<?= $this->link ?>">Weiterlesen</a></div>
+        <div class="more"><a href="<?= $this->link ?>"><?= $this->linkText === '' ? 'Weiterlesen' : $this->linkText ?></a></div>
     <?php endif; ?>
 </div>

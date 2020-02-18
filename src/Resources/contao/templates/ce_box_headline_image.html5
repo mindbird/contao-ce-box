@@ -3,7 +3,7 @@
     <?php if ($this->headline): ?>
         <<?= $this->hl ?> class="headline">
             <?php if($this->link !== '') : ?>
-                <a href="<?= $this->link ?>">Weiterlesen</a></div>
+                <a href="<?= $this->link ?>"><?= $this->linkText === '' ? 'Weiterlesen' : $this->linkText ?></a></div>
             <?php endif; ?>
 
             <?= $this->headline ?>
