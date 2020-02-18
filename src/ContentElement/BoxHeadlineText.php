@@ -38,6 +38,8 @@ class BoxHeadlineText extends AbstractContentElementController
         $page = PageModel::findByPk($model->jumpTo);
         if ($page !== null) {
             $template->link = $page->getFrontendUrl();
+        } elseif ($model->url !== '') {
+            $template->link = $model->url;
         } else {
             $template->link = '';
         }
