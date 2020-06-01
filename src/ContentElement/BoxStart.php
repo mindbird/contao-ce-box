@@ -23,11 +23,7 @@ class BoxStart extends AbstractContentElementController
     {
         if (TL_MODE === 'BE') {
             $template = new BackendTemplate ('be_wildcard');
-            $template->wildcard = '';
-            $template->title = $model->headline;
-            $template->id = $model->id;
-            $template->link = $model->name;
-            $template->href = 'contao/main.php?do=themes&amp;table=tl_module&amp;act=edit&amp;id=' . $model->id;
+            $template->wildcard = '### BOX - START';
             return $template->getResponse();
         }
 
