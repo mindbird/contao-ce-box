@@ -30,10 +30,12 @@ class BoxHeadlineText extends AbstractContentElementController
         $template->slogan = $model->slogan;
 
         $file = FilesModel::findByPk($model->singleSRC);
-        Template::addImageToTemplate($template, [
-            'singleSRC' => $file->path,
-            'size' => StringUtil::deserialize($model->imgSize),
-        ]);
+        if ($file !== null) {
+            Template::addImageToTemplate($template, [
+                'singleSRC' => $file->path,
+                'size' => StringUtil::deserialize($model->imgSize),
+            ]);
+        }
 
         $page = PageModel::findByPk($model->jumpTo);
         if ($page !== null) {
