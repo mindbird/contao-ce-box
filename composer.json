@@ -10,16 +10,15 @@
         }
     ],
     "require": {
-        "php": "^7.2",
-        "contao/core-bundle": "^4.4"
+        "php": "^8.2",
+        "contao/core-bundle": "^4.13"
     },
     "conflict": {
         "contao/core": "*",
         "contao/manager-plugin": "<2.0 || >=3.0"
     },
     "require-dev": {
-        "contao/manager-plugin": "^2.0",
-        "friendsofphp/php-cs-fixer": "^2.12"
+        "contao/manager-plugin": "^2.0"
     },
     "extra": {
         "contao-manager-plugin": "Mindbird\\Contao\\CEBox\\ContaoManager\\Plugin"
@@ -32,5 +31,12 @@
     "support": {
         "issues": "https://github.com/mindbird/contao-ce-box/issues",
         "source": "https://github.com/mindbird/contao-ce-box"
+    },
+    "config": {
+        "allow-plugins": {
+            "contao-components/installer": true,
+            "php-http/discovery": true,
+            "contao/manager-plugin": true
+        }
     }
 }
