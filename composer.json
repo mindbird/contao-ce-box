@@ -2,6 +2,12 @@
     "name": "mindbird/contao-ce-box",
     "type": "contao-bundle",
     "description": "Content element with title, slogan, image, text and link.",
+    "keywords": [
+        "contao",
+        "contao-bundle",
+        "content-element"
+    ],
+    "homepage": "https://github.com/mindbird/contao-ce-box",
     "license": "LGPL-3.0-or-later",
     "authors": [
         {
@@ -10,15 +16,15 @@
         }
     ],
     "require": {
-        "php": "^8.2",
-        "contao/core-bundle": "^4.13"
+        "php": "^8.3",
+        "contao/core-bundle": "^5.7"
     },
     "conflict": {
         "contao/core": "*",
         "contao/manager-plugin": "<2.0 || >=3.0"
     },
     "require-dev": {
-        "contao/manager-plugin": "^2.0"
+        "contao/manager-plugin": "^2.3.1"
     },
     "extra": {
         "contao-manager-plugin": "Mindbird\\Contao\\CEBox\\ContaoManager\\Plugin"
@@ -33,6 +39,7 @@
         "source": "https://github.com/mindbird/contao-ce-box"
     },
     "config": {
+        "sort-packages": true,
         "allow-plugins": {
             "contao-components/installer": true,
             "php-http/discovery": true,
