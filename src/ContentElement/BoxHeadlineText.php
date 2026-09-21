@@ -12,7 +12,7 @@ namespace Mindbird\Contao\CEBox\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
-use Contao\FilesModel;
+use Contao\CoreBundle\Image\Studio\Studio;
 use Contao\PageModel;
 use Contao\StringUtil;
 use Contao\Template;
@@ -21,6 +21,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BoxHeadlineText extends AbstractContentElementController
 {
+    public function __construct(private readonly Studio $studio)
+    {
+    }
+
     protected function getResponse(Template $template, ContentModel $model, Request $request): Response
     {
         $arrHeadline = StringUtil::deserialize($model->headline);
@@ -29,12 +33,16 @@ class BoxHeadlineText extends AbstractContentElementController
         $template->text = $model->box_text;
         $template->slogan = $model->slogan;
 
-        $file = FilesModel::findByPk($model->singleSRC);
-        if ($file !== null) {
-            Template::addImageToTemplate($template, [
-                'singleSRC' => $file->path,
-                'size' => StringUtil::deserialize($model->imgSize),
-            ]);
+        $figure = $this->studio
+            ->createFigureBuilder()
+            ->fromUuid($model->singleSRC ?: '')
+            ->setSize($model->size)
+            ->setOverwriteMetadata($model->getOverwriteMetadata())
+            ->buildIfResourceExists()
+        ;
+
+        if ($figure !== null) {
+            $figure->applyLegacyTemplateData($template);
         }
 
         $page = PageModel::findByPk($model->jumpTo);
