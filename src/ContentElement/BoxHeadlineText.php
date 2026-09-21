@@ -12,20 +12,24 @@ namespace Mindbird\Contao\CEBox\ContentElement;
 
 use Contao\ContentModel;
 use Contao\CoreBundle\Controller\ContentElement\AbstractContentElementController;
+use Contao\CoreBundle\DependencyInjection\Attribute\AsContentElement;
 use Contao\CoreBundle\Image\Studio\Studio;
+use Contao\CoreBundle\Twig\FragmentTemplate;
 use Contao\PageModel;
 use Contao\StringUtil;
-use Contao\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+#[AsContentElement(type: BoxHeadlineText::TYPE, category: 'boxes')]
 class BoxHeadlineText extends AbstractContentElementController
 {
+    public const string TYPE = 'box_headline_text';
+
     public function __construct(private readonly Studio $studio)
     {
     }
 
-    protected function getResponse(Template $template, ContentModel $model, Request $request): Response
+    protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         $arrHeadline = StringUtil::deserialize($model->headline);
         $template->headline = \is_array($arrHeadline) ? $arrHeadline['value'] : $arrHeadline;
