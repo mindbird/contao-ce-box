@@ -4,16 +4,22 @@ services:
 
     mindbird.contao.ce.box:
         class: Mindbird\Contao\CEBox\ContentElement\Box
+        arguments:
+            - '@contao.image.studio'
         tags:
             - { name: contao.content_element, category: boxes }
 
     mindbird.contao.ce.boxHeadlineText:
         class: Mindbird\Contao\CEBox\ContentElement\BoxHeadlineText
+        arguments:
+            - '@contao.image.studio'
         tags:
             - { name: contao.content_element, category: boxes }
 
     mindbird.contao.ce.boxHeadlineImage:
         class: Mindbird\Contao\CEBox\ContentElement\BoxHeadlineImage
+        arguments:
+            - '@contao.image.studio'
         tags:
             - { name: contao.content_element, category: boxes }
 
